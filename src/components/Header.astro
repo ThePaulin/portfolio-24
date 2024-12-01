@@ -46,7 +46,7 @@ function buildNavLink(nav: string, entry: NavEntry): string {
 					const translation = t(nav);
 					return (
 						<HeaderLink
-							class="block py-2 sm:py-0"
+							class="block py-2 sm:py-0 font-bold"
 							href={buildNavLink(nav, translation)}
 							title={translation.text}
 							aria-current={

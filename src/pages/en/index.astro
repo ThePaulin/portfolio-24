@@ -9,6 +9,7 @@ import {
 	sortMDByPinned,
 } from "@/utils";
 import type { CollectionEntry } from "astro:content";
+import PortfolioGetInTouch from "@/components/PortfolioGetInTouch";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
@@ -54,15 +55,11 @@ const tech: Array<{ title: string; desc: string; href: string }> = [
 	<section>
 		<h1 class="title">Hello World</h1>
 		<p class="mb-4 sm:mb-8">
-			Hey guys! This a theme for Astro. You can use this to as personal
-			blog or portfolio. If you want to know more about how you can
-			customise and make it your own, click on the github icon link below,
-			and it will take you to the repo.
-		</p>
-		<div>
-			<span>You can find me on: </span>
-			<SocialMediaLinks />
-		</div>
+			Hi!👋 My name is <strong>Paulin Kubwira</strong>, I'm a full stack web developer with over 4 years of experience.
+		I had a chance to work diverse projects that challenged my skills for both collaboration, communication,
+		project management as well as technical skills.
+	</p>
+	<PortfolioGetInTouch language="en" />
 	</section>
 
 	<section class="mt-8 sm:mt-16">
@@ -76,7 +73,7 @@ const tech: Array<{ title: string; desc: string; href: string }> = [
 		</ul>
 	</section>
 
-	<section class="mt-16">
+	<!-- <section class="mt-16">
 		<h2 class="title">Technologies</h2>
 		<ul class="space-y-4 sm:space-y-2">
 			{
@@ -95,5 +92,5 @@ const tech: Array<{ title: string; desc: string; href: string }> = [
 				))
 			}
 		</ul>
-	</section>
+	</section> -->
 </BaseLayout>

@@ -9,12 +9,13 @@ import {
 	sortMDByPinned,
 } from "@/utils";
 import type { CollectionEntry } from "astro:content";
+import PortfolioGetInTouch from "@/components/PortfolioGetInTouch";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts);
 const allPostsByPinned = sortMDByPinned(allPostsByDate);
-const filteredPostsByLanguage = filterByLanguage(allPostsByPinned, "es").slice(0, MAX_POSTS);
+const filteredPostsByLanguage = filterByLanguage(allPostsByPinned, "fr").slice(0, MAX_POSTS);
 
 const tech: Array<{ title: string; desc: string; href: string }> = [
 	{
@@ -54,19 +55,15 @@ const tech: Array<{ title: string; desc: string; href: string }> = [
 	<section>
 		<h1 class="title">Hello World</h1>
 		<p class="mb-4 sm:mb-8">
-			¡Hola a todos! Este es un tema para Astro. Pueden usarlo como blog
-			personal o portafolio. Si quieren saber más sobre cómo
-			personalizarlo y hacerlo suyo, hagan clic en el enlace del ícono de
-			Github que aparece a continuación y los llevará al repositorio.
+			Salut! Je m'appelle <strong>Paulin Kubwira</strong>, je suis un développeur web full stack avec plus de 4 ans d'expérience.
+		J'ai eu la chance de travailler sur divers projets qui ont mis à l'épreuve mes compétences en matière de collaboration, de communication,
+gestion de projet ainsi que des compétences techniques.
 		</p>
-		<div>
-			<span>Puedes encontrarme en:</span>
-			<SocialMediaLinks />
-		</div>
+		<PortfolioGetInTouch language="fr" />
 	</section>
 
 	<section class="mt-8 sm:mt-16">
-		<h2 class="title">Posts</h2>
+		<h2 class="title">Articles</h2>
 		<ul class="space-y-4 sm:space-y-2">
 			{
 				filteredPostsByLanguage.map((p) => (
@@ -76,7 +73,7 @@ const tech: Array<{ title: string; desc: string; href: string }> = [
 		</ul>
 	</section>
 
-	<section class="mt-16 mb-4">
+	<!-- <section class="mt-16 mb-4">
 		<h2 class="title">Technologies</h2>
 		<ul class="space-y-4 sm:space-y-2">
 			{
@@ -95,10 +92,10 @@ const tech: Array<{ title: string; desc: string; href: string }> = [
 				))
 			}
 		</ul>
-	</section>
+	</section> -->
 
-	<hr />
+	<!-- <hr />
 	<section class="">
 		<p>Esto fue traducido usando Google Translate</p>
-	</section>
+	</section> -->
 </BaseLayout>
